@@ -1,0 +1,115 @@
+* {
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #0f1220;
+    color: #fff;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    user-select: none;
+}
+
+p {
+    font-style: italic;
+    text-align: center;
+    font-size: .8em;
+    opacity: .8;
+    margin-bottom: 30px;
+    user-select: none;
+}
+
+/* Conteneur principal */
+.tier-list {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+/* Chaque tier */
+.tier {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+
+    background: #1c1f3a;
+    border-radius: 8px;
+    padding: 10px;
+    min-height: 200px;
+}
+
+.tier h2 {
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+    user-select: none;
+}
+
+/* Zone des noms */
+.names {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+
+/* Nom draggable */
+.name {
+    background: #2d31ff;
+    padding: 8px 12px;
+    border-radius: 6px;
+    cursor: grab;
+    user-select: none;
+    font-weight: bold;
+    transition: transform 0.1s, background 0.2s;
+}
+
+.name:active {
+    cursor: grabbing;
+    transform: scale(0.95);
+}
+
+.name:hover {
+    background: #4549ff;
+}
+
+/* Feedback visuel quand on survole un tier */
+.tier.drag-over {
+    outline: 2px dashed #6c6fff;
+}
+
+.start-zone {
+    background: #14162b;
+    border: 2px dashed #3b3fff;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+    min-height: 80px;
+}
+
+#reset {
+    border-radius: 5px;
+    border: 1px solid #3b3fff;
+    background-color: #2d31ff;
+    color: white;
+    user-select: none;
+    font-weight: bold;
+    padding: 8px 12px;
+    transition: transform 0.1s, background 0.2s;
+}
+
+#reset:hover {
+    background: #4549ff;
+}
+
+/* L'élément devient un peu transparent quand on le déplace */
+.name.dragging {
+    opacity: 0.5;
+}
