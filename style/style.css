@@ -15,6 +15,22 @@ h1 {
     user-select: none;
 }
 
+h1[contenteditable="true"] {
+    padding: 5px;
+    border-radius: 5px;
+    transition: background 0.3s;
+    outline: none; /* Enlève le cadre par défaut du navigateur */
+}
+
+h1[contenteditable="true"]:hover {
+    background: rgba(255, 255, 255, 0.1);
+    cursor: text;
+}
+
+h1[contenteditable="true"]:focus {
+    border-bottom: 2px solid #2d31ff;
+}
+
 p {
     font-style: italic;
     text-align: center;
@@ -27,8 +43,8 @@ p {
 /* Conteneur principal */
 .tier-list {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 10px;
+    grid-template-columns: repeat(auto-fit, minmax( 200px, 1fr));
+    gap: 15px;
     margin-bottom: 30px;
 }
 
