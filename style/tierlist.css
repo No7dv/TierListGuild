@@ -1,0 +1,197 @@
+
+
+h1 {
+    text-align: center;
+    user-select: none;
+}
+
+h1[contenteditable="true"] {
+    padding: 5px;
+    border-radius: 5px;
+    transition: background 0.3s;
+    outline: none;
+    /* Enlève le cadre par défaut du navigateur */
+}
+
+h1[contenteditable="true"]:hover {
+    background: rgba(255, 255, 255, 0.1);
+    cursor: text;
+}
+
+h1[contenteditable="true"]:focus {
+    border-bottom: 2px solid #2d31ff;
+}
+
+p {
+    font-style: italic;
+    text-align: center;
+    font-size: .8em;
+    opacity: .8;
+    margin-bottom: 30px;
+    user-select: none;
+}
+
+/* Conteneur principal */
+/* .tier-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    margin-bottom: 30px;
+} */
+
+.tier-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+}
+
+/* Chaque tier : devient une ligne horizontale */
+.tier {
+    display: flex;
+    flex-direction: row; 
+    flex-wrap: nowrap;       /* INTERDIT de passer sous le H2 */
+    align-items: stretch;    /* La lettre prend toute la hauteur */
+    background: #1c1f3a;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    min-height: 80px;
+    overflow: hidden;
+}
+
+/* Le bandeau de lettre (S, A, B...) à gauche */
+.tier h2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    min-width: 80px;         /* Largeur fixe garantie */
+    flex-shrink: 0;          /* Empêche la lettre de s'écraser */
+    margin: 0;
+    font-size: 1.5rem;
+    color: #333;
+    user-select: none;
+}
+
+/* LA ZONE MAGIQUE POUR TES NOMS */
+.tier-content {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    gap: 10px;
+    min-height: 80px;
+    flex-grow: 1;
+    padding: 10px
+}
+
+/* version 1 de tier (une seule colonne) */
+/* .tier {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+
+    background: #1c1f3a;
+    border-radius: 8px;
+    padding: 10px;
+    min-height: 200px;
+} */
+
+/* Version 1 du titre des tiers */
+/* .tier h2 {
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 1.3rem;
+    user-select: none;
+    color: #333;
+    padding: 5px 20px;
+    border-radius: 5px;
+    width: 100%;
+} */
+
+/* Zone des noms */
+.names {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+
+/* Nom draggable */
+.name {
+    background: #2d31ff;
+    padding: 8px 12px;
+    border-radius: 6px;
+    cursor: grab;
+    user-select: none;
+    font-weight: bold;
+    transition: transform 0.1s, background 0.2s;
+}
+
+.name:active {
+    cursor: grabbing;
+    transform: scale(0.95);
+}
+
+.name:hover {
+    background: #4549ff;
+}
+
+/* Feedback visuel quand on survole un tier */
+.tier.drag-over {
+    outline: 2px dashed #6c6fff;
+}
+
+.start-zone {
+    background: #14162b;
+    border: 2px dashed #3b3fff;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+    min-height: 80px;
+}
+
+#btnReset {
+    border-radius: 5px;
+    border: 1px solid #3b3fff;
+    background-color: #2d31ff;
+    color: white;
+    user-select: none;
+    font-weight: bold;
+    padding: 8px 12px;
+    transition: transform 0.1s, background 0.2s;
+}
+
+#btnReset:hover {
+    background: #4549ff;
+}
+
+/* L'élément devient un peu transparent quand on le déplace */
+/* L'élément en cours de déplacement ne doit pas perturber la grille */
+.name.dragging {
+    opacity: 0.5;
+    transform: scale(1.05);
+    background: #4549ff;
+    overflow: hidden;
+    transition: none !important;
+}
+
+.tier[data-tier="S"] h2 {
+    background-color: rgb(214, 97, 97);
+}
+
+.tier[data-tier="A"] h2 {
+    background-color: rgb(207, 143, 3);
+}
+
+.tier[data-tier="B"] h2 {
+    background-color: #f5e27a;
+}
+
+.tier[data-tier="C"] h2 {
+    background-color: #6ecc62;
+}
+
+.tier[data-tier="D"] h2 {
+    background-color: #519fee;
+}
