@@ -1,67 +1,102 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
-  <meta charset="UTF-8">
-  <title>Tier List Guilde</title>
-  <link rel="stylesheet" href="./style/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WWM - Les Mendiants</title>
+    <link rel="stylesheet" href="./style/main.css">
+    <link rel="stylesheet" href="./style/tierlist.css">
+    <link rel="stylesheet" href="./style/classement.css">
 </head>
+
 <body>
 
-<h1 id="main-title" contenteditable="true">Tier List Guilde</h1>
 
+
+<section class="section">
+
+    <p id="notion">Cette liste n'est pas à prendre au sérieux !</p>
+    <h1 id="main-title" contenteditable="true">Tier List PvE</h1>
+    <p id="main-para">titre modifiable</p>
+
+    <!-- zone des tiers -->
 <div class="tier-list">
-  <div class="tier" data-tier="S">
-    <h2>S Tier</h2>
-  </div>
-  <div class="tier" data-tier="A">
-    <h2>A Tier</h2>
-  </div>
-  <div class="tier" data-tier="B">
-    <h2>B Tier</h2>
-  </div>
-  <div class="tier" data-tier="C">
-    <h2>C Tier</h2>
-  </div>
-  <div class="tier" data-tier="D">
-    <h2>D Tier</h2>
-  </div>
+    <div class="tier" data-tier="S">
+        <h2>S</h2>
+        <div class="tier-content"></div> </div>
+    <div class="tier" data-tier="A">
+        <h2>A</h2>
+        <div class="tier-content"></div>
+    </div>
+    <div class="tier" data-tier="B">
+        <h2>B</h2>
+        <div class="tier-content"></div>
+    </div>
+    <div class="tier" data-tier="C">
+        <h2>C</h2>
+        <div class="tier-content"></div>
+    </div>
+    <div class="tier" data-tier="D">
+        <h2>D</h2>
+        <div class="tier-content"></div>
+    </div>
 </div>
 
-<p>(Ci-dessous, ceux qui ont battu l'un des boss du breaking army)</p>
+    <!-- zone stock -->
+    <div class="names start-zone">
+        <div class="name" draggable="true">Amendyl</div>
+        <div class="name" draggable="true">Ashgal</div>
+        <div class="name" draggable="true">AyameT</div>
+        <div class="name" draggable="true">AzzaThoT</div>
+        <div class="name" draggable="true">BadPoussin</div>
+        <div class="name" draggable="true">Biggy</div>
+        <div class="name" draggable="true">Caribous</div>
+        <div class="name" draggable="true">Elvyraptor</div>
+        <div class="name" draggable="true">Himiko</div>
+        <div class="name" draggable="true">Jia-Min</div>
+        <div class="name" draggable="true">K'haos</div>
+        <div class="name" draggable="true">KnKZN</div>
+        <div class="name" draggable="true">Lie-La</div>
+        <div class="name" draggable="true">Lighzt</div>
+        <div class="name" draggable="true">Moeko</div>
+        <div class="name" draggable="true">Mushotoku</div>
+        <div class="name" draggable="true">Niix</div>
+        <div class="name" draggable="true">Ombroro</div>
+        <div class="name" draggable="true">RIASS</div>
+        <div class="name" draggable="true">Sanwa</div>
+        <div class="name" draggable="true">SilverSword</div>
+        <div class="name" draggable="true">Sorji</div>
+        <div class="name" draggable="true">Souruita</div>
+        <div class="name" draggable="true">Stephaus</div>
+        <div class="name" draggable="true">Tayric</div>
+        <div class="name" draggable="true">ValkyMoria</div>
+        <div class="name" draggable="true">Wokin</div>
+        <div class="name" draggable="true">wRzz</div>
+    </div>
 
-<div class="names start-zone">
-<div class="name" draggable="true">Amendyl</div>
-<div class="name" draggable="true">Ashgal</div>
-<div class="name" draggable="true">AyameT</div>
-<div class="name" draggable="true">AzzaThoT</div>
-<div class="name" draggable="true">BadPoussin</div>
-<div class="name" draggable="true">Biggy</div>
-<div class="name" draggable="true">Caribous</div>
-<div class="name" draggable="true">Elvyraptor</div>
-<div class="name" draggable="true">Himiko</div>
-<div class="name" draggable="true">Jia-Min</div>
-<div class="name" draggable="true">K'haos</div>
-<div class="name" draggable="true">KnKZN</div>
-<div class="name" draggable="true">Lie-La</div>
-<div class="name" draggable="true">Lighzt</div>
-<div class="name" draggable="true">Moeko</div>
-<div class="name" draggable="true">Mushotoku</div>
-<div class="name" draggable="true">Niix</div>
-<div class="name" draggable="true">Ombroro</div>
-<div class="name" draggable="true">RIASS</div>
-<div class="name" draggable="true">Sanwa</div>
-<div class="name" draggable="true">SilverSword</div>
-<div class="name" draggable="true">Sorji</div>
-<div class="name" draggable="true">Souruita</div>
-<div class="name" draggable="true">Stephaus</div>
-<div class="name" draggable="true">Tayric</div>
-<div class="name" draggable="true">ValkyMoria</div>
-<div class="name" draggable="true">Wokin</div>
-<div class="name" draggable="true">wRzz</div>
+    <!-- bouton reset -->
+    <button id="btnReset">Reset</button>
+
+
+</section>
+
+<section class="section">
+<h1 id="second-title">Classement Breaking Army</h1>
+<h3>(COMING SOON...)</h3>
+<div class="boss-container">
+    <div class="bloc1">
+        <h2></h2>
+        <p></p>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
 </div>
 
-<button id="reset">Reset</button>
+</section>
 
-<script src="./script/script.js"></script>
+    <script src="./script/script.js"></script>
 </body>
 </html>
